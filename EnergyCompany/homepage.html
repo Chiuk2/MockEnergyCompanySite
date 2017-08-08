@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <title> Greenergy's Homepage </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <style type="text/css">
+	 
+      h1 {background-color:#00FF00; font-family: Academy Engraved, sans-serif; text-align: center; margin-right: 400px; margin-left: 400px;}  	  
+	  div.one {background-color:#F5F5F5; font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+		background-image: url('background.png');
+		background-attachment: fixed; background-position: center;
+		font-size: 110%; margin-right: 400px; margin-left: 400px;
+		}
+      body {background-image: url("http://houstonelectricsaver.com/wp-content/uploads/2016/06/solar-energy-hd-wallpaperssolar-reum-batteries-germany-p5n3mmgf.jpg");
+		 background-size: 1920px 1080px; background-repeat: no-repeat; margin: 0; }
+		 
+      a:link { color: #ffffff;}
+      a:visited { color: #ffffff;}
+      a:hover  { background-color:#05A51E;  border:solid; border-color:#05A51E; border-width:11.5px;}
+      a:active  {background-color:#05A51E;}
+	  
+	  .marquee {background-color:#05A51E;font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+				 font-size:1em; color:#07220A; text-shadow: 5px 5px 5px #00ff00}
+	  
+	  /* Header NAVIGATION */
+nav {
+	background-image: url("banner.png");
+	height: 120%; width: 120%;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	text-align: left;
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul {
+  display: inline;
+    margin-top: 5px;
+	font-size: 2rem;
+}
+
+.logo {
+  float: left;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  color: #056E1E;
+  font-size: 120%;
+}
+
+.logo a {
+  margin-right: 30px;
+  padding: 8px 18px;
+}
+
+.logo a:hover {
+	background-color:transparent;
+	border-color:transparent;
+	border-width:0px;
+}
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
+}
+
+/* Wind Turbine Animations */
+#propeller1 {
+ position:absolute;
+ z-index: 9;
+ left:71.7px;
+ top:422px;
+}
+#base1{
+ position:absolute;
+ z-index: 8;
+ left:100px;
+ top:480px;
+}
+#propeller2 {
+ position:absolute;
+ z-index: 7;
+ left:111.5px;
+ top:423.7px;
+}
+#base2{
+ position:absolute;
+ z-index: 6;
+ left:140px;
+ top:476.7px;
+}
+#propeller3 {
+ position:absolute;
+ z-index: 5;
+ left:151.9px;
+ top:428.3px;
+}
+#base3{
+ position:absolute;
+ z-index: 4;
+ left:180px;
+ top:476.7px;
+}
+
+#propeller4 {
+ position:absolute;
+ z-index: 3;
+ left:192.4px;
+ top:432.5px;
+}
+#base4{
+ position:absolute;
+ z-index: 2;
+ left:220px;
+ top:476.7px;
+}
+
+#propellerR1 {
+ position:absolute;
+ z-index: 9;
+ left:1521.7px;
+ top:422px;
+}
+#baseR1{
+ position:absolute;
+ z-index: 8;
+ left:1550px;
+ top:480px;
+}
+#propellerR2 {
+ position:absolute;
+ z-index: 7;
+ left:1482.2px;
+ top:423.7px;
+}
+#baseR2{
+ position:absolute;
+ z-index: 6;
+ left:1511.2px;
+ top:476.7px;
+}
+#propellerR3 {
+ position:absolute;
+ z-index: 5;
+ left:1442px;
+ top:428.3px;
+}
+#baseR3{
+ position:absolute;
+ z-index: 4;
+ left:1471.2px;
+ top:476.7px;
+}
+
+#propellerR4 {
+ position:absolute;
+ z-index: 3;
+ left:1403px;
+ top:432.5px;
+}
+#baseR4{
+ position:absolute;
+ z-index: 2;
+ left:1431.2px;
+ top:476.7px;
+}
+ </style>
+ <script type="text/javascript">
+
+var one = 'TRUE';
+var angle = 0;
+var i = 0;
+var show = new Array();
+function doMove(element, speed){
+var img = document.getElementById(element);
+if(one == 'TRUE'){
+	angle = (angle - 1) %-359;
+	img.style.transform = "rotate(" + angle + "deg)";
+	setTimeout('doMove(\''+element+'\','+speed+')', speed);
+	}
+}
+
+//List of Pictures for array slide show
+
+show[0] = "wind-1.jpg";
+show[1] = "solar_panels.jpg";
+show[2] = "hydroelectric-dam.jpg";
+show[3] = "battery_ev.jpg";
+show[4] = "geothermal.jpg";
+show[5] = "geothermal_info.png";
+function slideShow()
+{
+document.slideshow.src = show[i];
+if(i< show.length-1)
+{
+ i++;
+}
+else{
+i=0;
+}
+setTimeout("slideShow()", 5000);
+}
+</script>
+</head>
+<body onLoad="slideShow()">
+
+<nav>
+
+<ul>
+
+	<li><a  href="Services.html"> Our Products & Services </a>
+	<li><a  href="about.html"> About Greenergy</a> 
+	<li><a  href="QA.html"> Help </a>
+	<li><a  href="mailto:chiuk2@unlv.nevada.edu"> Contact Us </a>
+	<div class="logo"> <a href="homepage.html"><img src="logo.png"; align= "left"/></a>
+	</div>
+ </ul>
+ </nav>
+ <h1 > Our Goal  </h1>
+ <div class="one">
+	<p style= "margin: 0cm 1cm 0cm 2.38cm;">
+	Our aim to provide the world innovative technology will have a great impact on
+	many groups of people, if there were no well-prepared plans to prevent harm in
+	the environment. Our projects and principles are conceived to protect our
+	employees, contractors, partners, customers, and communities around our
+	facilities. We strive to inovate new ways to provide power as our top priority.
+	</p>
+	<p style="text-align:center;"><img name="slideshow" height = 400 width = 560 src="wind-1.jpg"></p>
+</div>
+<img id="propeller1" src="propeller.png" height="130" width="130">
+<script>doMove("propeller1", 20);</script>
+<img id="base1" src="turbular_tower.png" height="160" width="78">
+
+<img id="propeller2" src="propeller.png" height="120" width="120">
+<script>doMove("propeller2", 20);</script>
+<img id="base2" src="turbular_tower.png" height="150" width="68">
+
+<img id="propeller3" src="propeller.png" height="110" width="110">
+<script>doMove("propeller3", 20);</script>
+<img id="base3" src="turbular_tower.png" height="140" width="58">
+
+<img id="propeller4" src="propeller.png" height="100" width="100">
+<script>doMove("propeller4", 20);</script>
+<img id="base4" src="turbular_tower.png" height="130" width="48">
+
+<img id="propellerR1" src="propeller.png" height="130" width="130">
+<script>doMove("propellerR1", 20);</script>
+<img id="baseR1" src="turbular_tower.png" height="160" width="78">
+
+<img id="propellerR2" src="propeller.png" height="120" width="120">
+<script>doMove("propellerR2", 20);</script>
+<img id="baseR2" src="turbular_tower.png" height="150" width="68">
+
+<img id="propellerR3" src="propeller.png" height="110" width="110">
+<script>doMove("propellerR3", 20);</script>
+<img id="baseR3" src="turbular_tower.png" height="140" width="58">
+
+<img id="propellerR4" src="propeller.png" height="100" width="100">
+<script>doMove("propellerR4", 20);</script>
+<img id="baseR4" src="turbular_tower.png" height="130" width="48">
+<h2 class="marquee"><marquee behaviour="slide" direction="left"> Our Projects deal in wind energy, solar energy, hydro-electricity, geothermal energy, and electric car batteries</marquee></h2>
+<nav >
+<p align="left">&copy; Copyright CS341 Class. All rights Reserved. </p>
+</nav>
+</body>
+</html>

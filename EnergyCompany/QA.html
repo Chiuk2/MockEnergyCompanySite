@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+ <title> Got Questions? </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <style type="text/css">
+	 
+      h1 {background-color:#00FF00; font-family: Academy Engraved, sans-serif; text-align: center; margin-right: 400px; margin-left: 400px;}  
+	  div.one {background-color:#F5F5F5; font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+		background-image: url('background.png');
+		background-attachment: fixed; background-position: center;
+		font-size: 150%; margin-right: 400px; margin-left: 400px;
+		}
+      body {background-image: url("http://www.copperstateengineering.com/wp-content/uploads/2016/01/engineering-blueprint.jpg");
+		 background-size: cover; background-repeat: no-repeat; margin: 0; }
+		td.products{padding-left:40px;padding-right:40px;}
+		th.products{padding-left:40px;padding-right:40px;}
+		table {margin-left:auto; margin-right:auto; margin-bottom:20px; text-align:left;}
+		.header {width:800px;background-color:white; padding:20px 20px 0px 0px; margin-top:20px; margin-left:auto; margin-right:auto; text-align:left;}
+		.pcenter {text-align:center; margin:0px 0px 0px 0px;}
+		.tbord {width:700px; border:double 6px; margin:auto auto;}
+		.bbord {width:700px; border:double 6px; margin:30px auto 10px auto;background-color:#DCDCDC}
+		.billingInfo {width:690px;}
+		.right {text-align:right;}
+		.bottom{position:relative; top:300px;}
+		.bottom1{position:relative; top:280px;}
+      a:link { color: #ffffff;}
+      a:visited { color: #ffffff;}
+      a:hover  { background-color:#05A51E;  border:solid; border-color:#05A51E; border-width:11.5px;}
+      a:active  {background-color:#05A51E;}
+	  
+	  /* Header NAVIGATION */
+nav {
+	background-image: url("banner.png");
+	height: 120%; width: 120%;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	text-align: left;
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul {
+  display: inline;
+    margin-top: 5px;
+	font-size: 2rem;
+}
+
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
+}
+
+
+.logo {
+  float: left;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  color: #056E1E;
+  font-size: 120%;
+}
+
+.logo a {
+  margin-right: 30px;
+  padding: 8px 18px;
+}
+
+.logo a:hover {
+	background-color:transparent;
+	border-color:transparent;
+	border-width:0px;
+}
+
+
+ </style>
+<script type = "text/javascript">
+	startTime = (new Date().getTime());
+	function initStopwatch(){ 
+     currentTime =(new Date().getTime()); 
+     var timeDiff = currentTime - startTime; 
+     this.diffSecs = timeDiff/1000; 
+     return(this.diffSecs); 
+   } 
+   function getSecs(){ 
+     var mySecs = initStopwatch(); 
+     var mySecs1 = ""+mySecs; 
+     mySecs1= mySecs1 + " secs."; 
+     var timeSpent = document.getElementById("timediff");
+	 timeSpent.value = mySecs1 ;
+     window.setTimeout('getSecs()',1000); 
+   }
+	</script>
+</head>
+<body onLoad="window.setTimeout('getSecs()',1)">
+<nav>
+
+<ul>
+	
+	<li><a  href="Services.html"> Our Products & Services </a>
+	<li><a  href="about.html"> About Greenergy</a> &nbsp 
+	<li><a  href="QA.html"> Help </a>
+	<li><a  href="mailto:chiuk2@unlv.nevada.edu"> Contact Us </a>
+	<div class="logo"> <a href="homepage.html"><img src="logo.png"; align= "left"/></a>
+	</div>
+ </ul>
+ </nav>
+&nbsp;&nbsp;
+ <h1> Submit your question here  </h1>
+ &nbsp&nbsp
+<div class="one">
+	<p style= "margin: 0cm 1cm 0cm 2.38cm;">
+	This page is dedicated for questions about green energy and the future
+	that our products and services will shape around the world. Questions
+	will be charged at a rate of $1/question. Please include your basic
+	Info below, as well as your question. 
+	</p>
+</div>
+&nbsp;&nbsp;
+<form action = "QA.php" method="post">
+<div align="center">
+<textarea rows="10" cols="100" name="question" placeholder="Enter your question here..." required></textarea>
+</div>
+<div class = "bbord">
+			<table class = "billingInfo" border = "0">
+				<tr>
+					<td class = "centerIt" colspan = "2"><strong> Billing Information </strong></td>
+					<td class = "centerIt"><strong> Payment Type <strong> </td>
+				<tr>
+					<td class = right> First Name: </td>
+					<td> 
+						<input type = "text" name = "firstname" size = "20" required /> Last Name: 
+						<input type = "text" name = "lastname" size = "20" required />
+					</td>
+					<td> <input type = "radio" name = "payment" value = "Visa" checked = "checked" /> Visa </td>
+				</tr>
+				<tr>
+					<td class = "right"> Street Address: </td>
+					<td> <input type = "text" name = "address" size = "58" required /></td>
+					<td> <input type = "radio" name = "payment" value = "Master Card" /> Master Card</td>
+				</tr>
+				<tr>
+					<td class = "right"> City: </td>
+					<td> 
+						<input type = "text" name = "city" size = "29" required /> State: 
+						<input type = "text" name = "state" size = "2" required /> Zip: 
+						<input type = "text" name = "zip" size = "5" required/> </td>
+					<td> <input type = "radio" name = "payment" value = "PayPal" /> PayPal </td>
+				</tr>
+			</table>
+			</div>
+			<p class = "pcenter">
+				<input type = "submit" value = "Submit Order" "/>
+				<input type = "reset" value = "Clear Order Form" />
+				<a href = "ViewQA.html"><font color=000000>Enter your Question ID here.</font></a>
+			</p>
+				<input type="hidden" id ="timediff" name = "spent" value = "0">
+			</p>
+			
+</form>
+
+<p class = "bottom1">
+			<a href = "AdminLogin.php"> Admin Login </a>
+</p>
+<nav class = "bottom">
+
+<p align="left">&copy; Copyright CS341 Class. All rights Reserved. </p>
+
+</nav>
+</body>
+</html>

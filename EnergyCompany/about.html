@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<?php
+	$servername = "localhost";
+$username = "username";
+$password = "password";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+echo "Connected successfully";
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <title> About Us </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <style type="text/css">
+	 
+      h1 {background-color:#00FF00; font-family: Academy Engraved, sans-serif; text-align: center; margin-right: 400px; margin-left: 400px;}  
+	  div.one {background-color:#F5F5F5; font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+		background-image: url('background.png');
+		background-attachment: fixed; background-position: center;
+		font-size: 150%; margin-right: 400px; margin-left: 400px;
+		}
+      body {background-image: url("http://www.ncstrades.edu/wp-content/uploads/2014/10/bigstock-Engineers-checking-solar-panel-20502491.jpg");
+		 background-size: cover; background-repeat: no-repeat; margin: 0; }
+	  
+      a:link { color: #ffffff;}
+      a:visited { color: #ffffff;}
+      a:hover  { background-color:#05A51E;  border:solid; border-color:#05A51E; border-width:11.5px;}
+      a:active  {background-color:#05A51E;}
+	  
+	  /* Header NAVIGATION */
+nav {
+	background-image: url("banner.png");
+	height: 120%; width: 120%;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	text-align: left;
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul {
+  display: inline;
+    margin-top: 5px;
+	font-size: 2rem;
+}
+
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
+}
+
+
+.logo {
+  float: left;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  color: #056E1E;
+  font-size: 120%;
+}
+
+.logo a {
+  margin-right: 30px;
+  padding: 8px 18px;
+}
+
+.logo a:hover {
+	background-color:transparent;
+	border-color:transparent;
+	border-width:0px;
+}
+
+
+ </style>
+ 
+</head>
+<body>
+
+
+
+<nav>
+
+<ul>
+	
+	<li><a  href="Services.html"> Our Products & Services </a>
+	<li><a  href="about.html"> About Greenergy</a> &nbsp 
+	<li><a  href="QA.html"> Help </a>
+	<li><a  href="mailto:chiuk2@unlv.nevada.edu"> Contact Us </a>
+	<div class="logo"> <a href="homepage.html"><img src="logo.png"; align= "left"/></a>
+	</div>
+ </ul>
+ </nav>
+
+ <h1> Who are Greenergy?  </h1>
+ 
+<div class="one">
+<p style= "margin: 0cm 1cm 0cm 2.38cm;">
+   Our company consists of the brightest minds from all different fields, who are working <br/>
+   very hard in order to provide ways of producing clean, environment-friendly energy to  <br/>
+   your local power companies. <br/>
+   </p>
+ </div>
+
+ <h1> Our Mission </h1>
+ 
+ <div class="one">
+ <p style= "margin: 0cm 1cm 0cm 2.38cm;">
+   Greenergy is fully committed in preserving the environment and promoting environmental<br/>
+   stewardship. Our goal is to provide innovative technology which provides clean energy <br/>
+   around the world, and to ensure a safe and healthy environment for our employees, <br/>
+   contractors, partners, and communities. Our principles will address the problems	and <br/>
+   challenges of climate change, renewable resources, finite resources, and toxins.<br/>
+ </p>
+   </div>   
+<?php
+$query = "SELECT * FROM employees";
+mysqli_query($db,$query) or die('Error querying database.');
+
+$result = mysqli_query($db, $query);
+$row = mysqli_fetch_array($result);
+
+while ($row = mysqli_fetch_array($result)) {
+echo $row['ENO'] . ' ' . $row['ENAME'] . ': ' . $row['ADDRESS'] . ' ' . $row['HDATE'] .'<br />';}
+mysqli_close($db);
+?>
+
+<nav >
+<p align="left">&copy; Copyright CS341 Class. All rights Reserved. </p>
+
+</nav>
+</body>
+</html>

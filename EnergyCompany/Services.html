@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+ <title> Our Services </title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+ <style type="text/css">
+	 
+      h1 {background-color:#00FF00; font-family: Academy Engraved, sans-serif; text-align: center; margin-right: 400px; margin-left: 400px;}  
+	  div.one {background-color:#F5F5F5; font-family: Futura, "Trebuchet MS", Arial, sans-serif; 
+		background-image: url('background.png');
+		background-attachment: fixed; background-position: center;
+		font-size: 150%; margin-right: 400px; margin-left: 400px;
+		}
+      body {background-image: url("http://www.ncstrades.edu/wp-content/uploads/2014/10/bigstock-Engineers-checking-solar-panel-20502491.jpg");
+		 background-size: cover; background-repeat: no-repeat; margin: 0; }
+	  
+      a:link { color: #ffffff;}
+      a:visited { color: #ffffff;}
+      a:hover  { background-color:#05A51E;  border:solid; border-color:#05A51E; border-width:11.5px;}
+      a:active  {background-color:#05A51E;}
+	  
+	  /* Header NAVIGATION */
+nav {
+	background-image: url("banner.png");
+	height: 120%; width: 120%;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	text-align: left;
+}
+
+nav li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul {
+  display: inline;
+    margin-top: 5px;
+	font-size: 2rem;
+}
+
+
+nav a {
+  height: 60px;
+  line-height: 60px;
+  color: #204156;
+  text-decoration: none;
+}
+
+
+.logo {
+  float: left;
+  font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+  color: #056E1E;
+  font-size: 120%;
+}
+
+.logo a {
+  margin-right: 30px;
+  padding: 8px 18px;
+}
+
+.logo a:hover {
+	background-color:transparent;
+	border-color:transparent;
+	border-width:0px;
+}
+
+
+ </style>
+   <SCRIPT TYPE="text/javascript">
+ 
+  function orderTotal(oform, prefix)
+  {
+   // set references to fields
+   var qty = oform[prefix + "_qty"];
+   var stHold = oform[prefix + "_stHold"];
+   var price = oform[prefix + "_price"];
+   var stVis = oform[prefix + "_stVis"];
+
+   // only bother if the field has contents
+   if (qty == "")return;
+
+   // if the with is not a number (NaN)
+   // or is zero or less
+   // everything goes blank
+  if(isNaN(qty.value) || (qty.value <= 0))
+   {
+   qty.value = "";
+   stHold.value = "";
+   }
+   
+  // else the field is a valid number, so calculate the 
+   // total order cost and put that value in the 
+  // hidden subtotal field
+  else
+   stHold.value = (Math.round(qty.value * price.value * 100))/100;
+
+   // call the routine which checks if the 
+  // visible subtotal is correct
+  visTotal(oform, prefix);
+  }
+
+   // checks if the visible subtotal is correct
+   // ie, if it equals the hidden subtotal field
+   function visTotal(oform, prefix)
+   {
+    var stHold = oform[prefix + "_stHold"];
+    var stVis = oform[prefix + "_stVis"];
+
+    if (stVis.value != stHold.value)
+      stVis.value = stHold.value;
+  }
+  
+
+  </SCRIPT>
+</head>
+<body>
+<nav>
+
+<ul>
+	
+	<li><a  href="Services.html"> Our Products & Services </a>
+	<li><a  href="about.html"> About Greenergy</a> &nbsp 
+	<li><a  href="QA.html"> Help </a>
+	<li><a  href="mailto:chiuk2@unlv.nevada.edu"> Contact Us </a>
+	<div class="logo"> <a href="homepage.html"><img src="logo.png"; align= "left"/></a>
+	</div>
+ </ul>
+ </nav>
+&nbsp;&nbsp;
+ <h1> Our Products & Services  </h1>
+ &nbsp&nbsp
+<FORM ACTION="../cgi-bin/mycgi.pl">
+<TABLE BORDER CELLPADDING=3 align="center">
+<!-- table titles -->
+<TR BGCOLOR="#0ECD00">
+   <TH>Services and Products</TD>
+   <TH>Quantity</TD>
+   <TH>Price</TD>
+   <TH>Total</TD>
+   </TR>
+
+
+<TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Solar Panels</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="sp_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'sp')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="sp_price" VALUE="799.99">$799.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="sp_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="sp_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'sp')" 
+         ></TD>
+   </TR>
+
+
+<TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Solar Panel Installation</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="spi_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'spi')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="spi_price" VALUE="29.99">$29.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="spi_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="spi_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'spi')" 
+         ></TD>
+   </TR>
+
+   
+   <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Wind Turbine Propeller</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="pro_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'pro')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="pro_price" VALUE="319.99">$319.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="pro_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="pro_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'pro')" 
+         ></TD>
+   </TR>
+   
+   
+   <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Propeller Installation</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="pi_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'pi')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="pi_price" VALUE="69.99">$69.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="pi_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="pi_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'pi')" 
+         ></TD>
+   </TR>
+ 
+  <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Wind Turbine Engine & Base</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="wteb_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'wteb')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="wteb_price" VALUE="3199.99">$3199.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="wteb_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="wteb_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'wteb')" 
+         ></TD>
+   </TR> 
+   
+     <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Wind Turbine Installation</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="wti_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'wti')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="wti_price" VALUE="299.99">$299.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="wti_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="wti_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'wti')" 
+         ></TD>
+   </TR> 
+   
+   <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Electric Car Battery v1</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="cb1_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'cb1')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="cb1_price" VALUE="419.99">$419.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="cb1_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="cb1_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'cb1')" 
+         ></TD>
+   </TR>
+   
+   <TR BGCOLOR="#DCDCDC">
+   <TD BGCOLOR="#BABABA">Electric Car Battery v2</TD>
+   <TD><INPUT 
+         TYPE=TEXT 
+         NAME="cb2_qty" 
+         SIZE=3 
+         onChange="orderTotal(this.form, 'cb2')" 
+         ></TD>
+   <TD><INPUT TYPE=HIDDEN NAME="cb2_price" VALUE="519.99">$519.99</TD>
+   <TD ALIGN=RIGHT>
+      <INPUT TYPE=HIDDEN NAME="cb2_stHold">
+      <INPUT 
+         TYPE=TEXT 
+         NAME="cb2_stVis" 
+         SIZE=10 
+         onChange="visTotal(this.form, 'cb2')" 
+         ></TD>
+   </TR>
+
+</TABLE>
+
+
+</FORM>
+<FORM onsubmit="return confirm('Process Confirmed!');">
+<P ALIGN="center"><INPUT TYPE=SUBMIT VALUE="submit"></P>
+</FORM>
+<nav >
+<p align="left">&copy; Copyright CS341 Class. All rights Reserved. </p>
+
+</nav>
+</body>
+</html>
